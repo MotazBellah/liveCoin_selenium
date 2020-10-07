@@ -18,6 +18,7 @@ class CoinSpiderSpider(scrapy.Spider):
         chrome_path = which("chromedriverr")
 
         driver = webdriver.Chrome(executable_path=chrome_path, options=chrome_options)
+        driver.set_window_size(1920, 1080)
         driver.get("https://www.livecoin.net/en")
 
         rur_tab = driver.find_elements_by_class_name("filterPanelItem___2z5Gb")
